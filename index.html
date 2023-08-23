@@ -11,7 +11,7 @@
 
 <body>
 
-  <header class="w3-container w3-indigo">
+  <header class="w3-container w3-indigo AppHeader">
     <h1>4152 Scouting App 2023</h1>
   </header>
   <!--**************************************************
@@ -68,27 +68,27 @@
         </td>
       </tr>
     </table>
-<button class="w3-button w3-hover-green w3-indigo w3-block">Scout Match</button>
+    <button class="w3-button w3-hover-green w3-indigo w3-block">Scout Match</button>
   </div>
   <!--End Select Match-->
 
-<!--**************************************************
+  <!--**************************************************
   Begin Scouting Screen
   ****************************************************-->
-  <div class="w3-container" id="beginScoutingScreen" style="display: none;"> 
+  <div class="w3-container" id="beginScoutingScreen" style="display: none;">
     <h2>Preloaded</h2>
     <div class="w3-bar w3-indigo">
       <button class="w3-bar-item w3-button">
         <img src="images/cone.jpeg" alt="cone" style="width: 50px;" />
       </button>
       <button class="w3-bar-item w3-button">
-        <img src="images/cube.jpeg" alt="cube"  style="width: 50px;"/>
+        <img src="images/cube.jpeg" alt="cube" style="width: 50px;" />
       </button>
       <button class="w3-bar-item w3-button">
-        <img src="images/none.png" alt="none"  style="width: 50px;" />
+        <img src="images/none.png" alt="none" style="width: 50px;" />
       </button>
     </div>
-    
+
     <div class="w3-section">
       <select class="w3-select w3-border" name="bsStartPosition">
         <option value="" disabled selected>Starting Position</option>
@@ -104,8 +104,116 @@
     <div class="w3-section">
       <button class="w3-btn w3-red w3-block">&#8592;</button>
     </div>
+
+  </div>
+  <!--End Begin Scouting-->
+
+  <!--**************************************************
+  Scouting Screen
+  ****************************************************-->
+  <div class="w3-block w3-padding-0" id="ScoutingScreen" style="width:100%;">
+    <!--Tabs -->
+    <div class="w3-bar w3-indigo" style="width: 100%;">
+      <button class="w3-bar-item w3-button" onclick="displayTab('Auto')">Auto</button>
+      <button class="w3-bar-item w3-button" onclick="displayTab('Teleop')">Teleop</button>
+      <button class="w3-bar-item w3-button" onclick="displayTab('EndGame')">End Game</button>
+    </div>
+
+    <!--Tab Content-->
+    <div id="Auto" class="w3-block ScoutTab">
+      <h2 class="w3-large">Team # Auto Scoring</h2>
+      <div class="w3-bar " style="width: 100%;">
+        <button class="w3-bar-item w3-button w3-purple" style="width: 50%">Cube Top</button>
+        <button class="w3-bar-item w3-button w3-yellow" style="width: 50%">Cone Top</button>
+      </div>
+      <div class="w3-bar " style="width: 100%;">
+        <button class="w3-bar-item w3-button w3-purple" style="width: 50%">Cube Middle</button>
+        <button class="w3-bar-item w3-button w3-yellow" style="width: 50%">Cone Middle</button>
+      </div>
+      <div class="w3-bar " style="width: 100%;">
+        <button class="w3-bar-item w3-button w3-purple" style="width: 50%">Cube Bottom</button>
+        <button class="w3-bar-item w3-button w3-yellow" style="width: 50%">Cone Bottom</button>
+      </div>
+      <h2 class="w3-large">Pickup</h2>
+      <div class="w3-bar " style="width: 100%;">
+        <button class="w3-bar-item w3-button w3-purple" style="width: 50%">Cube Ground</button>
+        <button class="w3-bar-item w3-button w3-yellow" style="width: 50%">Cone Ground</button>
+      </div>
+      <h2 class="w3-large">End of Auto</h2>
+      <input class="w3-check" type="checkbox"><label>Mobility</label>
+      <select class="w3-select" name="option">
+        <option value="" disabled selected>Charge station</option>
+        <option value="1">Docked</option>
+        <option value="2">Engaged</option>
+        <option value="3">Failed to Dock</option>
+        <option value="">No charge station attempt</option>
+      </select>
+    </div>
+    <!--End auto-->
+
     
-  </div><!--End Begin Scouting-->
+    <div id="Teleop" class="w3-block ScoutTab" style="display: none;">
+      <h2 class="w3-large">Team # Teleop Scoring</h2>
+      <!--Top scoring bar-->
+      <div class="w3-bar " style="width: 100%;">
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-purple w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-purple w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-purple w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+      </div><!--end top scoring bar-->
+      <!--Middle scoring bar-->
+      <div class="w3-bar " style="width: 100%;">
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-purple w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-purple w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-purple w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-yellow w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+      </div><!--end Middle scoring bar-->
+      <!--Bottom scoring bar-->
+      <div class="w3-bar " style="width: 100%;">
+        <button class="w3-bar-item w3-button w3-gray w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-gray w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-gray w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-gray w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-gray w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-gray w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-gray w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-gray w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+        <button class="w3-bar-item w3-button w3-gray w3-border w3-border-black" style="width: 11%">&nbsp;</button>
+      </div><!--end bottom scoring bar-->
+    <div class="w3-bar" stle="width: 100%">
+      <h2 class="w3-bar-item w3-medium" style="width: 50%">Completed Links</h2>
+      <button class="w3-bar-item w3-button w3-black" style="width: 50%">0 Completed Links</button>
+    </div>
+      <h2 class="w3-bar-item w3-large">Pickup</h2>
+      <div class="w3-bar " style="width: 100%;">
+        <button class="w3-bar-item w3-button w3-indigo w3-border w3-border-black" style="width: 33%">Ground</button>
+        <button class="w3-bar-item w3-button w3-indigo w3-border w3-border-black" style="width: 33%">Single</button>
+        <button class="w3-bar-item w3-button w3-indigo w3-border w3-border-black" style="width: 33%">Double</button>
+      </div>
+            <h2 class="w3-bar-item w3-large">Defense</h2>
+      <div class="w3-bar " style="width: 100%;">
+        <button class="w3-bar-item w3-button w3-indigo w3-border w3-border-black" style="width: 33%">Blocked</button>
+        <button class="w3-bar-item w3-button w3-indigo w3-border w3-border-black" style="width: 33%">Tried</button>
+        <button class="w3-bar-item w3-button w3-indigo w3-border w3-border-black" style="width: 33%">Drew Foul</button>
+      </div>
+    </div><!--end Teleop-->
+    
+    <div id="EndGame" class="w3-container ScoutTab" style="display: none;">
+      <h1>End Game</h1>
+    </div>
+  </div>
+  <!--End Scouting-->
+
   <script src="script.js"></script>
 
   <!--
